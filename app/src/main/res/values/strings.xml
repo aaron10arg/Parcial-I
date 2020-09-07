@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Parcial-I</string>
+    <string name="frament">Universal</string>
+    <string name="frament2">Area</string>
+
+    <string name="cant">Cantidad:</string>
+    <string name="result2">Resultado:</string>
+    <string name="unid">Unidades:</string>
+    <string name="conver">Convertir</string>
+    <string name="result">00</string>
+</resources>
