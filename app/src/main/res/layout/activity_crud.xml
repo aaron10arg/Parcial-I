@@ -12,6 +12,7 @@
         android:layout_marginTop="60dp"
         android:layout_width="match_parent"
         android:hint="CODIGO"
+        android:inputType="number"
         android:layout_height="wrap_content"/>
     <EditText
         android:id="@+id/txtNombreZapato"
@@ -30,22 +31,24 @@
         android:layout_marginTop="240dp"
         android:layout_width="match_parent"
         android:hint="TALLA"
+        android:inputType="numberDecimal"
         android:layout_height="wrap_content"/>
     <EditText
         android:id="@+id/txtPrecioZapato"
         android:layout_marginTop="300dp"
         android:layout_width="match_parent"
         android:hint="PRECIO"
+        android:inputType="numberDecimal"
         android:layout_height="wrap_content"/>
     <Button
-        android:id="@+id/btnGuardarAmigos"
+        android:id="@+id/btnGuardarProducto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="360dp"
         android:text="Guardar"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btnMostrarAmigos"
+        android:id="@+id/btnMostrarProducto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
@@ -54,5 +57,4 @@
         android:layout_marginBottom="15dp"
         android:src="@android:drawable/ic_menu_revert"
         app:backgroundTint="@color/colorPrimary" />
-
 </RelativeLayout>
