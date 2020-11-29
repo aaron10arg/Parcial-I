@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
+    tools:context=".RegistroSms"
+    android:background="@drawable/fondo2">
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/Usreg"
+        android:layout_alignRight="@+id/Usreg"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="Usuario        "
+        android:textColor="#ff4e83ff"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Usreg"
+        android:layout_alignEnd="@+id/Usreg"
+        android:layout_alignRight="@+id/Usreg"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:text="Contraseña"
+        android:textColor="#ff4e83ff"
+        android:textSize="30sp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Usreg"
+        android:layout_below="@+id/textView9"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#ffaaaaaa"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textSize="25sp" />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingrese el Codigo"
+        android:id="@+id/txtC"
+        android:textSize="25sp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#ff47ca6a" />
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberPassword"
+        android:ems="10"
+        android:id="@+id/Pwreg"
+        android:layout_below="@+id/textView11"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#ffaaaaaa"
+        android:layout_toLeftOf="@+id/check"
+        android:layout_toStartOf="@+id/check"
+        android:textSize="25sp" />
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/check"
+        android:onClick="enviar"
+        android:background="@drawable/consulta"
+        android:layout_alignBottom="@+id/Pwreg"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="41dp"
+        android:layout_marginEnd="41dp"
+        android:src="@android:drawable/ic_dialog_email" />
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/save"
+        android:onClick="Registrar"
+        android:layout_alignBottom="@+id/codigo"
+        android:layout_alignLeft="@+id/check"
+        android:layout_alignStart="@+id/check"
+        android:background="@drawable/circulo"
+        android:src="@android:drawable/ic_menu_save" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberPassword"
+        android:ems="10"
+        android:id="@+id/codigo"
+        android:layout_below="@+id/txtC"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#ffaaaaaa"
+        android:layout_toLeftOf="@+id/save"
+        android:layout_toStartOf="@+id/save"
+        android:textSize="25sp" />
+
+</RelativeLayout>

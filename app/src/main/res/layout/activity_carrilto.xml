@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
+    tools:context=".Carrito"
+    android:id="@+id/quemasve"
+    android:clickable="false"
+    android:background="@drawable/menus">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Carrito de Compras"
+        android:id="@+id/textView10"
+        android:textIsSelectable="false"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Pedidos"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/imageButton21"
+        android:layout_above="@+id/aaaa" />
+
+    <ImageButton
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:id="@+id/imageButton21"
+        android:background="@drawable/check"
+        android:layout_alignTop="@+id/textView10"
+        android:layout_alignRight="@+id/Pedidos"
+        android:layout_alignEnd="@+id/Pedidos" />
+
+    <ImageButton
+        android:layout_width="48dp"
+        android:layout_height="45dp"
+        android:id="@+id/Clear"
+        android:background="@drawable/clear"
+        android:layout_above="@+id/Pedidos"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageButton
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:id="@+id/aaaa"
+        android:background="@drawable/circulo"
+        android:src="@android:drawable/ic_menu_upload"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="osdo" />
+
+</RelativeLayout>

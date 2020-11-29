@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
+    tools:context=".ControlMenu"
+    android:id="@+id/idRela"
+    android:background="#ffecede4">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Control de Apariencia"
+        android:id="@+id/textView8"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textColor="#ff1b1b1b"
+        android:textStyle="bold|normal" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Platos"
+        android:id="@+id/button22"
+        android:layout_alignParentBottom="true" />
+
+    <ImageButton
+        android:layout_width="75dp"
+        android:layout_height="80dp"
+        android:onClick="fondos"
+        android:id="@+id/p2"
+        android:background="@drawable/pantallaso2"
+        android:layout_above="@+id/p1"
+        android:layout_alignLeft="@+id/p1"
+        android:layout_alignStart="@+id/p1"
+        android:layout_marginBottom="43dp" />
+
+    <ImageButton
+        android:layout_width="75dp"
+        android:layout_height="80dp"
+        android:onClick="fondos"
+        android:id="@+id/p1"
+        android:background="@drawable/pantallaso"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/btnimg"
+        android:layout_toStartOf="@+id/btnimg" />
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/btnimg"
+        android:background="@drawable/back"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/textView8"
+        android:layout_alignEnd="@+id/textView8" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Primavera"
+        android:id="@+id/textView12"
+        android:layout_alignTop="@+id/p2"
+        android:layout_alignLeft="@+id/textView13"
+        android:layout_alignStart="@+id/textView13" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Normal Admin"
+        android:id="@+id/textView13"
+        android:layout_alignTop="@+id/p1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+
+</RelativeLayout>

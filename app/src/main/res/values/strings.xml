@@ -1,11 +1,27 @@
 <resources>
-    <string name="app_name">Parcial-I</string>
-    <string name="frament">Universal</string>
-    <string name="frament2">Area</string>
+    <string name="app_name">RestaurantApp</string>
 
-    <string name="cant">Cantidad:</string>
-    <string name="result2">Resultado:</string>
-    <string name="unid">Unidades:</string>
-    <string name="conver">Convertir</string>
-    <string name="result">00</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_categorias">Categorias</string>
+    <string name="title_activity_platos">Platos</string>
+    <string name="title_activity_bebidas">Bebidas</string>
+    <string name="title_activity_porciones">Porciones</string>
+    <string name="title_activity_parrillada">Parrillada</string>
+    <string name="title_activity_mariscos">Mariscos</string>
+    <string name="title_activity_control_menu">Control Menu</string>
+    <string name="title_activity_administrador">Administrador</string>
+    <string name="title_activity_control_platos">Control de Platos</string>
+    <string name="title_activity_menu_list">Menu_list</string>
+    <string name="title_activity_lista_platos">ListaPlatos</string>
+    <string name="title_activity_carrilto">Carrito de Compras</string>
+    <string name="title_activity_registro_sms">Seguridad</string>
+    <string name="title_activity_custom_adapter_list2">CustomAdapterList2</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_adapter_list2">AdapterList2</string>
+    <string name="title_activity_acerca">Acerca De</string>
+    <string name="title_activity_listado_final">Listado Final</string>
+    <string name="title_activity_notas">Notas</string>
+    <string name="title_activity_listado_pedido">Listado de Pedido</string>
+    <string name="title_activity_pedido">Pedido</string>
 </resources>
