@@ -72,35 +72,29 @@ public class RegistroSms extends Activity {
 
 
     public void Registrar(View v) {
-        AdminSQLiteOpenHelper guarda = new AdminSQLiteOpenHelper(this, "usuario", null, 1);
-        SQLiteDatabase base = guarda.getWritableDatabase();
 
-        String iid = user.getText().toString();
-        String ides = pass.getText().toString();
-        String codigo = cod.getText().toString();
-        code2 = Integer.parseInt(codigo);
-        // code2= Integer.toString(code);
+        try {
+            AdminSQLiteOpenHelper guarda = new AdminSQLiteOpenHelper(this, "usuario", null, 1);
 
-        //    if (code2.equals(code)) {
+            SQLiteDatabase base = guarda.getWritableDatabase();
 
-        //es una clase para guardar datos
-        ContentValues grabar_oficina =new ContentValues();
-        grabar_oficina.put("username",iid);
-        grabar_oficina.put("password",ides);
+            String iid = user.getText().toString();
+            String ides = pass.getText().toString();
+            String codigo = cod.getText().toString();
+            code2 = Integer.parseInt(codigo);
 
-        base.insert("usuario",null,grabar_oficina);
-        base.close();
-        Toast.makeText(this, "Registrado", Toast.LENGTH_SHORT).show();
-        Intent i =new Intent(RegistroSms.this, administrador.class);
-        startActivity(i);
-        //    }
-        //   else {
+            ContentValues grabar_oficina = new ContentValues();
+            grabar_oficina.put("username", iid);
+            grabar_oficina.put("password", ides);
 
-        //       Toast.makeText(this, "Error! El codigo ingresado NO es valido:", Toast.LENGTH_SHORT).show();
-
-        //     }
-
-
+            base.insert("usuario", null, grabar_oficina);
+            base.close();
+            Toast.makeText(this, "Registrado", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(RegistroSms.this, administrador.class);
+            startActivity(i);
+        }catch (Exception e){
+            Toast.makeText(this, "Usuario existente", Toast.LENGTH_SHORT).show();
+        }
     }
 
 

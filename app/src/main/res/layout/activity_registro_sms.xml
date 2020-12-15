@@ -80,6 +80,17 @@
     <ImageButton
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:id="@+id/save"
+        android:onClick="Registrar"
+        android:layout_alignBottom="@+id/codigo"
+        android:layout_alignLeft="@+id/check"
+        android:layout_alignStart="@+id/check"
+        android:background="@drawable/circulo"
+        android:src="@android:drawable/ic_menu_save" />
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:id="@+id/check"
         android:onClick="enviar"
         android:background="@drawable/consulta"
@@ -88,18 +99,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginRight="41dp"
         android:layout_marginEnd="41dp"
-        android:src="@android:drawable/ic_dialog_email" />
-
-    <ImageButton
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:id="@+id/save"
-        android:onClick="Registrar"
-        android:layout_alignBottom="@+id/codigo"
-        android:layout_alignLeft="@+id/check"
-        android:layout_alignStart="@+id/check"
-        android:background="@drawable/circulo"
-        android:src="@android:drawable/ic_menu_save" />
+        android:src="@android:drawable/ic_dialog_email"  />
 
     <EditText
         android:layout_width="wrap_content"

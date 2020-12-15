@@ -16,6 +16,8 @@ public class administrador extends AppCompatActivity {
     EditText user, pass;
     ImageButton lapiz;
 
+    private String Email = "", Password = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,24 +44,35 @@ public class administrador extends AppCompatActivity {
     public void login(View v) {
         AdminSQLiteOpenHelper lg = new AdminSQLiteOpenHelper(this,"usuario",null,1);
         SQLiteDatabase db = lg.getWritableDatabase();
-        //devuelve 0 o 1 fila //es una consulta
-        String lu = user.getText().toString();
-        String lp = pass.getText().toString();
-        Cursor fila = db.rawQuery("select username, password from usuario where password= "+lp, null);
-        if (fila.moveToFirst()) {  //si ha devuelto 1 fila, vamos al primero (que es el unico)
 
-            Toast.makeText(this, "Login Correcto",
-                    Toast.LENGTH_SHORT).show();
-            Global.log="1";
+        Email = user.getText().toString();
+        Password = pass.getText().toString();
 
-            Intent i =new Intent(administrador.this,principal.class);
-            startActivity(i);
+        if(!Email.isEmpty() && !Password.isEmpty()){
+            if (Password.length() >= 6) {
+                //devuelve 0 o 1 fila //es una consulta
+                String lu = user.getText().toString();
+                String lp = pass.getText().toString();
+                Cursor fila = db.rawQuery("select username, password from usuario where password= "+lp, null);
+                if (fila.moveToFirst()) {  //si ha devuelto 1 fila, vamos al primero (que es el unico)
+
+                    Toast.makeText(this, "Login Correcto",
+                            Toast.LENGTH_SHORT).show();
+                    Global.log="1";
+
+                    Intent i =new Intent(administrador.this,principal.class);
+                    startActivity(i);
+                }
+                else {
+                    Toast.makeText(this, "Login Fallido", Toast.LENGTH_SHORT).show();
+                    Global.log="0";
+                }
+                db.close();
+            }else {
+                Toast.makeText(administrador.this,"Contraseña incorrecta", Toast.LENGTH_SHORT).show();
+            }
+        }else {
+            Toast.makeText(administrador.this,"Debes llenar todos los campos", Toast.LENGTH_SHORT).show();
         }
-        else {
-            Toast.makeText(this, "Login Fallido", Toast.LENGTH_SHORT).show();
-            Global.log="0";
-        }
-        db.close();
-
     }
 }

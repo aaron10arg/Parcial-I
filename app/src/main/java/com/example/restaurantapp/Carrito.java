@@ -1,5 +1,6 @@
 package com.example.restaurantapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
@@ -18,6 +19,17 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
@@ -25,6 +37,8 @@ import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class Carrito extends Activity {
@@ -39,6 +53,9 @@ public class Carrito extends Activity {
     int cc;
     String v = "1";
 
+
+    private Button btnPrueba;
+
     private Socket socket;
     private static final int SERVERPORT = 6000;
     private static final String SERVER_IP = "192.168.0.101";
@@ -47,6 +64,22 @@ public class Carrito extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_carrilto);
+
+        btnPrueba = (Button) findViewById(R.id.aaaa);
+
+        btnPrueba.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               osdo();
+            }
+        });
+
+        FirebaseMessaging.getInstance().subscribeToTopic("enviarNotificacion").addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) { }
+        });
+
+
         clear = (ImageButton) findViewById(R.id.Clear);
         desc = (TextView) findViewById(R.id.item);
         pre = (TextView) findViewById(R.id.itempre);
@@ -129,8 +162,35 @@ public class Carrito extends Activity {
             Toast.makeText(this, "No existen platos!\nAgrege Nuevamente Platos", Toast.LENGTH_SHORT).show();
     }
 
-    public void osdo(View view) {
+    public void osdo() {
         toas();
+        RequestQueue myrequest = Volley.newRequestQueue(getApplicationContext());
+        JSONObject json = new JSONObject();
+        try {
+            json.put("to", "/topics/"+"enviarNotificacion");
+            JSONObject notificacion = new JSONObject();
+            notificacion.put("titulo", "Nuevo pedido");
+            notificacion.put("pedido", "Orden pendiente");
+
+            json.put("data", notificacion);
+
+            String URL = "https://fcm.googleapis.com/fcm/send";
+
+            JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST,URL,json,null,null){
+                @Override
+                public Map<String, String> getHeaders() {
+                    Map<String ,String > header = new HashMap<>();
+                    header.put("content-type","application/json");
+                    header.put("authorization","key=AAAA02Xdczk:APA91bFlAReFi_OR8OUAGWdr5sNHdNjM2PG-o4P4JqvUxvXVVE73kk_oe19RnOhJyCV_hCzIQyNvGB78H0HbfTkydPmIIATLvfLSzNuo1prRGZvX5FMTXWvlLPkPmAf0G1KMXO9TZmTg");
+                    return header;
+                }
+            };
+
+            myrequest.add(request);
+
+        }catch (JSONException e){
+            e.printStackTrace();
+        }
         try {
             do{
                 cc++;
@@ -145,6 +205,7 @@ public class Carrito extends Activity {
                         true);
                 a.println(ped);
             }while(cc<50);
+
         }catch(UnknownHostException e){
             e.printStackTrace();
         }catch(IOException e){
